@@ -32,7 +32,7 @@ def startDownload():
 		# strms = ob.streams.all()
 		# for s in strms:
 		#	print(s)
-		strm = ob.streams.first()
+		strm = ob.streams.filter(progressive=True, res="720p").first()
 		file_size = strm.filesize
 		vTitle.config(text=strm.title)
 		vTitle.pack(side=TOP)
